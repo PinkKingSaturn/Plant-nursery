@@ -33,6 +33,15 @@ export const CartSlice = createSlice({
     },
   },
 });
+// Extract the reducer and actions from the slice
+const cartReducer = CartSlice.reducer;
+
+// Create the Redux store
+const store = configureStore({
+  reducer: {
+    cart: cartReducer,
+  },
+});
 
 export const { addItem, removeItem, updateQuantity } = CartSlice.actions;
 
